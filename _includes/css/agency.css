@@ -130,6 +130,8 @@ fieldset[disabled] .btn-primary.active {
     background-color: #{{ site.data.template.color.primary }};
 }
 
+
+
 .btn-xl:hover,
 .btn-xl:focus,
 .btn-xl:active,
@@ -177,7 +179,7 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default .navbar-brand {
     font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;
-    color: #{{ site.data.template.color.primary }};
+    color: white;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -236,9 +238,9 @@ fieldset[disabled] .btn-xl.active {
 
 @media(min-width:768px) {
     .navbar-default {
-        padding: 25px 0;
+        /* padding: 25px 0; */
         border: 0;
-        background-color: transparent;
+        /* background-color: transparent; */
         -webkit-transition: padding .3s;
         -moz-transition: padding .3s;
         transition: padding .3s;
@@ -269,22 +271,25 @@ header {
     text-align: center;
     color: #fff;
     background-attachment: scroll;
-    background-image: url('{{ site.baseurl }}/img/header-bg.jpg');
-    background-position: center center;
-    background-repeat: none;
+
+    background-image: radial-gradient( circle farthest-corner at 25% 60%,  rgb(242, 193, 44) 0%, rgb(235, 98, 19) 90% );   background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    background-size: cover;
     -o-background-size: cover;
+    background-position: left center;
+    background-size: cover;
+
 }
 
+
+
 header .intro-text {
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
 
 header .intro-text .intro-lead-in {
-    margin-bottom: 25px;
+    margin-bottom: 25;
     font-family: {{ site.data.template.font.secondary }};
     font-size: 22px;
     font-style: italic;
@@ -302,8 +307,8 @@ header .intro-text .intro-heading {
 
 @media(min-width:768px) {
     header .intro-text {
-        padding-top: 300px;
-        padding-bottom: 200px;
+        padding-top: 10%;
+        padding-bottom: 10%;
     }
 
     header .intro-text .intro-lead-in {
@@ -356,7 +361,19 @@ section h3.section-subheading {
 
 #portfolio .portfolio-item {
     right: 0;
-    margin: 0 0 15px;
+    margin: 0 0 50px 30px;
+    
+    /* margin-bottom: 100px; */
+}
+#portfolio .portfolio-item:hover{
+    transform: scale(1.15);
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    transition: all ease .5s;
+}
+#portfolio .portfolio-item .project-img{
+    width : 75%;
+    height : 200px;
 }
 
 #portfolio .portfolio-item .portfolio-link {
@@ -374,28 +391,29 @@ section h3.section-subheading {
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
-    background: rgba(254,209,54,.9); /* Fallback when no plugin support */
-    background: rgba({{ site.data.template.color.primary | hex_to_rgb | join: ',' }}, .9);
+    background: rgba(99, 96, 84, 0.9); /* Fallback when no plugin support */
+    /* background: rgba({{ site.data.template.color.primary | hex_to_rgb | join: ',' }}, .9); */
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
-    opacity: 1;
+    opacity: 10;
 }
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
     position: absolute;
-    top: 50%;
-    width: 100%;
+    top: 10%;
+    bottom: 40%;
     height: 20px;
-    margin-top: -12px;
+    margin-top: 0px;
     text-align: center;
     font-size: 20px;
     color: #fff;
+    
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+/* #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
     margin-top: -12px;
-}
+} */
 
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
 #portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
@@ -404,7 +422,7 @@ section h3.section-subheading {
 
 #portfolio .portfolio-item .portfolio-caption {
     margin: 0 auto;
-    padding: 25px;
+    padding: 10px;
     max-width: 400px;
     text-align: center;
     background-color: #fff;
@@ -425,10 +443,14 @@ section h3.section-subheading {
 #portfolio * {
     z-index: 2;
 }
-
+#portfolio .project-heading{
+    text-align: center;
+    text-transform: capitalize;
+    padding-bottom: 3%;
+}
 @media(min-width:767px) {
     #portfolio .portfolio-item {
-        margin: 0 0 30px;
+        margin: 0 0 60px ;
     }
 }
 
@@ -553,6 +575,7 @@ section h3.section-subheading {
     .timeline>li {
         margin-bottom: 100px;
         min-height: 100px;
+        float:left;
     }
 
     .timeline>li .timeline-panel {
@@ -658,9 +681,15 @@ aside.clients img {
 
 section#contact {
     background-color: #222;
-    background-image: url('{{ site.baseurl }}/img/map-image.png');
+    /* background-image: url('{{ site.baseurl }}/img/map-image.png'); */
     background-position: center;
     background-repeat: no-repeat;
+}
+section#contact p{
+    padding: 5%;
+    color: white;
+    font-size: large;
+    margin: 10px;
 }
 
 section#contact .section-heading {
@@ -865,3 +894,45 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #{{ site.data.template.color.primary }};
 }
+#experience .equi-box{
+  /* border: 10px solid black; */
+  width: 100%;
+  display: flex;
+  justify-content:stretch;
+}
+#experience .equi-box:hover .experience-item{
+    /* border: 10px solid black; */
+    width: 75%;
+    height: 70%;
+    /* position: relative; */
+}
+
+#experience .experience-item{
+    right: 0;
+
+}
+
+
+#experience .experience-item .thumbnail-pic{
+    width: 100%;
+    height: 70%;
+}
+#experience .equi-box .experience-item:hover {
+    width: 100%;
+    /* position: relative; */
+    transition: 0.5s;
+    margin:0px;
+    height: 70%;
+
+}
+#experience .equi-box .experience-item:hover .thumbnail-pic{
+    width: 100%;
+    height: 70%;
+}
+#experience .equi-box .experience-item p{
+    display:none;
+}
+#experience .equi-box .experience-item:hover p{
+    display:block;
+}
+
